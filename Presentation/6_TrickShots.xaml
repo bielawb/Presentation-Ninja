@@ -21,7 +21,7 @@
         </TextBlock.Effect>
         <TextBlock.Text>Trick Shots</TextBlock.Text>
         </TextBlock>
-        <Image Grid.Column="0" Grid.RowSpan="3" Source="Media/ideas.png">
+        <Image Grid.Column="0" Grid.RowSpan="3" Source="Media/trick-shot.jpg">
              <Image.Effect>
                 <DropShadowEffect Direction="-45" Color="#FFB6C2CB" ShadowDepth="10" BlurRadius="14" />
             </Image.Effect>
@@ -35,12 +35,12 @@
           <StackPanel Orientation="Horizontal">
             <Image Source="Media/Ninja-Star.jpg" RenderOptions.BitmapScalingMode="Fant" Stretch="Fill"
               Width="120" Height="120" VerticalAlignment="Center" Margin="0,0,0,0" />
-            <TextBlock VerticalAlignment="Center" FontSize="35" FontFamily="Anonymous Pro for PowerLine">Guessing Commands</TextBlock>
+            <TextBlock VerticalAlignment="Center" FontSize="35" FontFamily="Anonymous Pro for PowerLine">Useful Variables</TextBlock>
           </StackPanel>
           <StackPanel Orientation="Horizontal">
             <Image Source="Media/Ninja-Star.jpg" RenderOptions.BitmapScalingMode="Fant" Stretch="Fill"
               Width="120" Height="120" VerticalAlignment="Center" Margin="0,0,0,0" />
-            <TextBlock VerticalAlignment="Center" FontSize="35" FontFamily="Anonymous Pro for PowerLine">Predicting Your Input</TextBlock>
+            <TextBlock VerticalAlignment="Center" FontSize="35" FontFamily="Anonymous Pro for PowerLine">Pipeline Mastery</TextBlock>
           </StackPanel>
         </StackPanel>
         <TextBlock Grid.Column="1" Grid.Row="2" FontSize="20" TextAlignment="Center" FontFamily="Anonymous Pro for PowerLine Italic" Margin="30,30,30,30">

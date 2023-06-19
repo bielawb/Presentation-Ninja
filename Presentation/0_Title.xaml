@@ -17,7 +17,7 @@
             <TextBlock.Effect>
                 <DropShadowEffect Direction="-45" Color="#FFB6C2CB" ShadowDepth="10" BlurRadius="14" />
             </TextBlock.Effect>
-            Become (Power)Shell Ninja Today!
+            Become<LineBreak/>(Power)Shell Ninja Today!
         </TextBlock>
         <Image Grid.Column="0" Grid.RowSpan="2" Source="Media/PowerShell-Ninja.jpg" />
     </Grid>

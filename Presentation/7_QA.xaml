@@ -19,13 +19,13 @@
             </TextBlock.Effect>
             <TextBlock.Text>Q&#160;&amp;&#160;A</TextBlock.Text>
         </TextBlock>
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="QA.png" >
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="Media/QA.png" >
             <Image.Effect>
                 <DropShadowEffect Direction="-45" Color="#FFB6C2CB" ShadowDepth="10" BlurRadius="14" />
             </Image.Effect>
         </Image>
         <TextBlock Grid.Column="1" Grid.Row="1" FontSize="20" TextAlignment="Center" FontFamily="Anonymous Pro for PowerLine Italic" Margin="30,30,30,30">
-        Writing DSC class-based resources
+        Become (Power)Shell Ninja Today!
         </TextBlock>
     </Grid>
 </Window>
