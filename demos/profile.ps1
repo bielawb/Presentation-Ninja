@@ -92,8 +92,9 @@ Set-PSReadlineKeyHandler -Chord Spacebar -ScriptBlock {
     $line = $null
     $cursor = $null
     $psReadLine::GetBufferState(
-        [ref]$line, [ref]$cursor
+        [ref]$ast, [ref]$null, [ref]$null, [ref]$cursor
     )
+    $line = $ast.EndBlock.Extent.Text
     if ($convert.ContainsKey($line)) {
         $psReadLine::Replace(
             0,
@@ -102,19 +103,24 @@ Set-PSReadlineKeyHandler -Chord Spacebar -ScriptBlock {
         )
         $psReadLine::SetCursorPosition($convert.$line.Length)
     } else {
-        $ast = [Parser]::ParseInput($line, [ref]$null, [ref]$null)
-        $currentToken = @(
+        $commandAst = @(
             $ast.Find(
                 {
-                    $args[0].Extent.EndOffset -eq $cursor -and
-                    $args[0] -is [CommandAst]
+                    $args[0] -is [CommandAst] -and
+                    (
+                        $args[0].Extent.EndOffset -ge $cursor -and
+                        $args[0].Extent.StartOffset -le $cursor
+                    )
                 },
                 $true
             )
         )[0]
+        if ($commandAst) {
+            $currentToken = $commandAst.CommandElements[0]
+        }
         if ($currentToken) {
             $potentialAlias = $currentToken.Extent.Text
-            $replace = if ($alias = Get-Alias -Name $potentialAlias | Where { $_.Name -eq $potentialAlias}) {
+            $replace = if ($alias = Get-Alias -Name $potentialAlias | Where-Object { $_.Name -eq $potentialAlias}) {
                 $alias.Definition
             }
         }
